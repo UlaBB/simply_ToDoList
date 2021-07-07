@@ -11,7 +11,7 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="/dist/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Todo list</title>
 </head>
 
@@ -23,9 +23,16 @@
 
     <form>
         <input type="text" class="toDo__input">
-        <button class="toDo__button" type="submit"></button>
-        <i class="fas fa-fas-square"></i>
+        <button class="toDo__button" type="submit">
+            <i class="fas fa-plus-square"></i>
+        </button>
     </form>
+
+    <div class="toDo__container">
+        <ul class="toDo__container__list">
+
+        </ul>
+    </div>
 
     <script src="/src/js/app.js"></script>
 </body>
