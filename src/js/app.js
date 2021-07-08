@@ -4,7 +4,6 @@ const app = {
     this.toDoButton = document.querySelector('.toDo__button');
     this.toDoInput = document.querySelector('.toDo__input');
     this.toDoList = document.querySelector('.toDo__container__list');
-    console.log(this.toDoList);
   },
 
   addItemToList: function () {
@@ -46,9 +45,26 @@ const app = {
     this.todoDiv.appendChild(trashButton);
   },
 
+  deleteCheck: function () {
+    this.toDoList.addEventListener('click', function (e) {
+      const item = e.target;
+
+      if (item.classList[0] === 'trash-btn') {
+        const todo = item.parentElement;
+        todo.remove();
+      }
+
+      if (item.classList[0] === 'completed-btn') {
+        const todo = item.parentElement;
+        todo.classList.toggle('completed');
+      }
+    });
+  },
+
   init: function () {
     this.getElements();
     this.addItemToList();
+    this.deleteCheck();
   }
 
 };
