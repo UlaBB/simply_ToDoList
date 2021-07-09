@@ -4,6 +4,7 @@ const app = {
     this.toDoButton = document.querySelector('.toDo__button');
     this.toDoInput = document.querySelector('.toDo__input');
     this.toDoList = document.querySelector('.toDo__container__list');
+    this.filterContainer = document.querySelector('.filter-todos');
   },
 
   addItemToList: function () {
@@ -51,7 +52,10 @@ const app = {
 
       if (item.classList[0] === 'trash-btn') {
         const todo = item.parentElement;
-        todo.remove();
+        todo.classList.add('fall');
+        todo.addEventListener('transitionend', function () {
+          todo.remove();
+        });
       }
 
       if (item.classList[0] === 'completed-btn') {
@@ -61,12 +65,39 @@ const app = {
     });
   },
 
+  filterList: function () {
+    this.filterContainer.addEventListener('click', e => {
+      const options = this.toDoList.childNodes;
+      for (let option of options) {
+        switch (e.target.value) {
+          case "all":
+            option.style.display = "flex";
+            break;
+          case "completed":
+            if (option.classList.contains('completed')) {
+              option.style.display = "flex";
+            } else {
+              option.style.display = "none";
+            }
+            break;
+          case "uncompleted":
+            if (!option.classList.contains('completed')) {
+              option.style.display = 'flex';
+            } else {
+              option.style.display = 'none';
+            }
+        }
+      }
+    });
+  },
+
+
   init: function () {
     this.getElements();
     this.addItemToList();
     this.deleteCheck();
+    this.filterList();
   }
-
 };
 
 app.init();
