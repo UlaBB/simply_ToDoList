@@ -5,7 +5,7 @@
 }
 
 body {
-	background-image: linear-gradient(120deg, #AC9209, #E79209);
+  background-image: linear-gradient(120deg, #AC9209, #E79209);
 	color: #fff;
 	font-family: 'Poppins', sans-serif;
 	min-height: 100vh;
@@ -47,6 +47,7 @@ form button:hover{
   justify-content: center;
   align-items: center;
   &__list{
+
     min-width: 30%;
     list-style: none;
   }
@@ -119,7 +120,7 @@ select{
 }
 
 .select::after{
-  content: 	"\25BC";
+  content: "\25BC";
   position: absolute;
   background: #E79209;
   color: #ffff;
@@ -132,5 +133,5 @@ select{
 
 .select:hover::after {
   background: #ffff;
-  color:#E79209;
+  color: #E79209;
 }
