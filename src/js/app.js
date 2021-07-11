@@ -72,22 +72,22 @@ const app = {
       const options = this.toDoList.childNodes;
       for (let option of options) {
         switch (e.target.value) {
-          case 'all':
+        case 'all':
+          option.style.display = 'flex';
+          break;
+        case 'completed':
+          if (option.classList.contains('completed')) {
             option.style.display = 'flex';
-            break;
-          case 'completed':
-            if (option.classList.contains('completed')) {
-              option.style.display = 'flex';
-            } else {
-              option.style.display = 'none';
-            }
-            break;
-          case 'uncompleted':
-            if (!option.classList.contains('completed')) {
-              option.style.display = 'flex';
-            } else {
-              option.style.display = 'none';
-            }
+          } else {
+            option.style.display = 'none';
+          }
+          break;
+        case 'uncompleted':
+          if (!option.classList.contains('completed')) {
+            option.style.display = 'flex';
+          } else {
+            option.style.display = 'none';
+          }
         }
       }
     });
@@ -95,10 +95,10 @@ const app = {
 
   saveLocalToDoList: function (todo) {
     let todos;
-    if (localStorage.getItem('todos') === null) {
+    if(localStorage.getItem('todos') === null){
       todos = [];
     } else {
-      todos = JSON.parse(localStorage.getItem('todos'));
+      todos =JSON.parse(localStorage.getItem('todos'));
     }
     todos.push(todo);
     localStorage.setItem('todos', JSON.stringify(todos));
@@ -106,6 +106,7 @@ const app = {
 
   saveLocalStorage: function () {
     document.addEventListener('DOMContentLoaded', e => {
+
       let todos;
       if (localStorage.getItem('todos') === null) {
         todos = [];
@@ -116,16 +117,16 @@ const app = {
       for (let todo of todos) {
         this.todoDiv = document.createElement('div');
         this.todoDiv.classList.add('todo');
+
         const newToDo = document.createElement('li');
         newToDo.innerText = todo;
         newToDo.classList.add('toDo__newItem');
         this.todoDiv.appendChild(newToDo);
+
         this.createCompletedBtn();
         this.createTrashBtn();
 
         this.toDoList.appendChild(this.todoDiv);
-        this.saveLocalToDoList(this.toDoInput.value);
-        this.toDoInput.value = '';
       }
     });
   },
@@ -139,6 +140,7 @@ const app = {
     else {
       todos = JSON.parse(localStorage.getItem('todos'));
     }
+    console.log(todo);
     const todoIndex = todo.children[0].innerText;
     todos.splice(todos.indexOf(todoIndex), 1);
     localStorage.setItem('todos', JSON.stringify(todos));
@@ -151,8 +153,6 @@ const app = {
     this.deleteCheck();
     this.filterList();
     this.saveLocalStorage();
-    localStorage.clear();
-    //this.saveLocalStorage();
   }
 };
 

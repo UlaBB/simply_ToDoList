@@ -5,55 +5,57 @@
 }
 
 body {
-  background-image: linear-gradient(120deg, #AC9209, #E79209);
-	color: #fff;
-	font-family: 'Poppins', sans-serif;
-	min-height: 100vh;
+  background-image: linear-gradient(120deg, #ac9209, #e79209);
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
 }
 
-header{
-	font-size: 20px;
-	font-weight: 200;
+header {
+  font-size: 20px;
+  font-weight: 200;
 }
 
-header,form {
-	min-height: 20vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+header,
+form {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-form input, form button {
+form input,
+form button {
   padding: 0.5rem;
   font-size: 2rem;
   border: none;
   background: white;
 }
 
-form button{
-  color: #E79209;
+form button {
+  color: #e79209;
   background: #fff;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-form button:hover{
+form button:hover {
   color: #fff;
-  background: #E79209;
+  background: #e79209;
 }
 
-.toDo__container{
+.toDo__container {
   display: flex;
   justify-content: center;
   align-items: center;
-  &__list{
 
+  &__list {
     min-width: 30%;
     list-style: none;
   }
 }
 
-.todo{
+.todo {
   margin: 0.5rem;
   background: #fff;
   color: #000000;
@@ -63,66 +65,66 @@ form button:hover{
   transition: all 0.5s ease;
 }
 
-.todo li{
+.todo li {
   flex: 1;
 }
 
 .completed-btn,
-.trash-btn{
+.trash-btn {
   color: #ffff;
-  background: #E79209;
+  background: #e79209;
   border: none;
   padding: 1rem;
   cursor: pointer;
   font-size: 1rem;
 }
 
-.completed-btn{
+.completed-btn {
   background: #629209;
 }
 
-.toDo__newItem{
+.toDo__newItem {
   padding: 0rem 0.5rem;
 }
 
 .fa-trash,
-.fa-check{
+.fa-check {
   pointer-events: none;
 }
 
-.completed{
+.completed {
   text-decoration: line-through;
   opacity: 0.5;
 }
 
-.fall{
+.fall {
   transform: translateY(2rem) rotateZ(20deg);
   opacity: 0;
 }
 
-select{
+select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   outline: none;
   box-shadow: none;
   border: none;
-  color: #E79209;
+  color: #e79209;
   width: 10rem;
   padding: 0.5rem;
   cursor: pointer;
 }
 
-.select{
+.select {
   margin: 1rem;
   position: relative;
   overflow: hidden;
 }
 
-.select::after{
+.select::after {
   content: "\25BC";
   position: absolute;
-  background: #E79209;
+  background: #e79209;
   color: #ffff;
   top: 0;
   right: 0;
@@ -133,5 +135,5 @@ select{
 
 .select:hover::after {
   background: #ffff;
-  color: #E79209;
+  color: #e79209;
 }
