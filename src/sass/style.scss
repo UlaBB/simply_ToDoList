@@ -1,3 +1,9 @@
+/*************************  VARIABLES *************************/
+$dark-green: #1f4037;
+$bright-green: #99f2c8;
+$white: #ffff;
+
+/*************************  GENERAL *************************/
 * {
   margin: 0;
   padding: 0;
@@ -5,8 +11,8 @@
 }
 
 body {
-  background-image: linear-gradient(120deg, #ac9209, #e79209);
-  color: #fff;
+  background-image: linear-gradient(120deg, $dark-green, $bright-green);
+  color: $white;
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
 }
@@ -20,6 +26,7 @@ header,
 form {
   min-height: 20vh;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
@@ -29,11 +36,11 @@ form button {
   padding: 0.5rem;
   font-size: 2rem;
   border: none;
-  background: white;
+  background: $white;
 }
 
 form button {
-  color: #e79209;
+  color: $dark-green;
   background: #fff;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -41,7 +48,7 @@ form button {
 
 form button:hover {
   color: #fff;
-  background: #e79209;
+  background: $dark-green;
 }
 
 .toDo__container {
@@ -72,7 +79,7 @@ form button:hover {
 .completed-btn,
 .trash-btn {
   color: #ffff;
-  background: #e79209;
+  background: #2e4b35;
   border: none;
   padding: 1rem;
   cursor: pointer;
@@ -80,7 +87,7 @@ form button:hover {
 }
 
 .completed-btn {
-  background: #629209;
+  background: #91eba4;
 }
 
 .toDo__newItem {
@@ -109,7 +116,7 @@ select {
   outline: none;
   box-shadow: none;
   border: none;
-  color: #e79209;
+  color: $dark-green;
   width: 10rem;
   padding: 0.5rem;
   cursor: pointer;
@@ -124,7 +131,7 @@ select {
 .select::after {
   content: "\25BC";
   position: absolute;
-  background: #e79209;
+  background: $dark-green;
   color: #ffff;
   top: 0;
   right: 0;
@@ -135,5 +142,5 @@ select {
 
 .select:hover::after {
   background: #ffff;
-  color: #e79209;
+  color: $dark-green;
 }
